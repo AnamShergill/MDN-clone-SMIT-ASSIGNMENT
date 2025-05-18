@@ -1,0 +1,771 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #fff;
+}
+
+.top {
+  max-width: 100vw;
+  height: 50px;
+  background-color: #f9f9f9;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 1.1em;
+  position: relative;
+}
+
+/*==================NAVBAR STYLING START=========================*/
+
+header {
+  min-height: 60px;
+  max-width: 100vw;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+}
+
+.main {
+  max-width: 1800px;
+  height: inherit;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main img {
+  height: 25px;
+  width: 200px;
+  margin-top: 10px;
+}
+
+.main nav {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.2rem;
+  border-bottom: 1px solid rgba(247, 244, 244, 0.506);
+}
+
+.main nav .left ul,
+.main nav .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-left: 0;
+}
+
+.main nav .left ul li {
+  margin: 0 1rem;
+}
+
+.main nav .left a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: rgb(89, 87, 87);
+  font-size: 1.2em;
+}
+
+.main nav .left a span {
+  color: rgb(177, 173, 173);
+}
+
+.new sup {
+  background-color: rgb(11, 83, 237);
+  padding: 0.1em 0.3em;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 20px;
+  vertical-align: super;
+  margin-left: 4px;
+}
+
+/*dropdown*/
+
+.main nav .left ul li {
+  position: relative;
+}
+
+.main nav .left ul.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -2em;
+
+  background-color: white;
+  min-width: 250px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  z-index: 1000;
+  padding: 5px 0;
+}
+.main nav .left ul li:hover > .dropdown {
+  display: block;
+}
+
+.main nav .left ul.dropdown li {
+  margin-left: 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.main nav .left ul.dropdown li a {
+  position: relative;
+  padding-left: 20px;
+  padding-top: 15px;
+  border-left: none;
+  color: rgb(23, 22, 22);
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  font-size: 1em;
+  white-space: nowrap;
+}
+
+/* create the shorter left border with ::before */
+.main nav .left ul.dropdown li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 25%;
+  height: 70%;
+  width: 4px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  border-radius: 2px;
+}
+
+/* colored left border for each item using nth-child */
+.main nav .left ul.dropdown li:nth-child(1) a::before {
+  background-color: #ff6b6b;
+}
+.main nav .left ul.dropdown li:nth-child(2) a::before {
+  background-color: #1dd1a1;
+}
+.main nav .left ul.dropdown li:nth-child(3) a::before {
+  background-color: #54a0ff;
+}
+.main nav .left ul.dropdown li:nth-child(4) a::before {
+  background-color: #feca57;
+}
+.main nav .left ul.dropdown li:nth-child(5) a::before {
+  background-color: #ba9ef1;
+}
+.main nav .left ul.dropdown li:nth-child(6) a::before {
+  background-color: #535350;
+}
+.main nav .left ul.dropdown li:nth-child(7) a::before {
+  background-color: #424144;
+}
+.main nav .left ul.dropdown li:nth-child(8) a::before {
+  background-color: #545257;
+}
+
+.main nav .left ul.dropdown li a:hover::before {
+  filter: brightness(1.2);
+}
+
+.main nav .left ul.dropdown li a:hover {
+  background-color: #f5f5f5;
+}
+
+.main nav .left ul.left ul li:hover.dropdown {
+  display: block;
+}
+
+.main .right {
+  position: relative;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1100;
+}
+
+.right .theme {
+  background-color: white;
+  border: none;
+  font-size: 0.9.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.2em;
+  margin-right: 0.8em;
+  border-radius: 0.2rem;
+  color: rgba(78, 76, 76, 0.998);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.right .theme:hover {
+  background-color: rgb(206, 203, 203);
+
+  border: 1px solid aqua;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Hide the checkbox */
+.toggle-checkbox {
+  display: none;
+}
+
+/* Style the label as button */
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  min-width: 120px;
+  z-index: 5000;
+}
+
+.dropdown-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-content li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 10px;
+
+  text-decoration: none;
+  color: rgb(146, 143, 143);
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+.dropdown-content li a:hover {
+  background-color: #ada9a9;
+}
+
+/* Show dropdown when checkbox is checked */
+.toggle-checkbox:checked + .theme + .dropdown-content {
+  display: block;
+}
+
+.right .input {
+  position: relative;
+  margin-right: 1em;
+}
+
+.right .input .line {
+  position: absolute;
+  width: 1.2em;
+  height: 2.5px;
+  background-color: rgb(17, 115, 242);
+  top: 20px;
+  left: 10px;
+}
+
+.right .input i {
+  color: rgba(174, 171, 171, 0.998);
+  position: absolute;
+  left: 45px;
+  top: 6px;
+  font-size: 1em;
+}
+
+.right .input input {
+  background: white;
+  width: 75px;
+  padding: 0.3em;
+  border-radius: 20px;
+  border: 1px solid rgb(167, 164, 164);
+  cursor: pointer;
+}
+
+.right a {
+  color: rgba(78, 76, 76, 0.998);
+  text-decoration: none;
+  list-style: none;
+  font-weight: 600;
+  font-size: 0.9em;
+  cursor: pointer;
+
+  margin-right: 1.5em;
+}
+
+.right button.btn {
+  width: 120px;
+  padding: 0.8em;
+  background-color: black;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.right button.btn:hover {
+  background-color: rgb(115, 112, 112);
+}
+
+/*==================NAVBAR STYLING END=========================*/
+
+/*=====================SECOND NAV STYLING START HERE=======================================*/
+
+#main {
+  min-height: 40px;
+  max-width: 100vw;
+  background-color: #f9f9f9;
+
+  align-items: center;
+
+  border: 1px solid rgb(176, 173, 173);
+
+  position: sticky;
+  top: 60px;
+  z-index: 800;
+}
+
+#main .nav2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 45em;
+  box-shadow: #f9f9f9;
+}
+
+.nav2 p {
+  font-size: 1.1em;
+  color: rgb(118, 116, 116);
+}
+
+.nav2 button {
+  padding: 5px;
+  border: none;
+  background: none;
+  background-color: transparent;
+  font-size: 1em;
+  font-weight: 600;
+  color: #565454;
+}
+
+.nav2 i {
+  margin-right: 6px;
+}
+
+.nav2 a {
+  text-decoration: none;
+  color: #6d6868;
+}
+
+/* Content Styling*/
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/*============//////////////LEFT SIDEBAR STYLING/////////////============*/
+
+.sidebar {
+  position: sticky;
+
+  top: 145px;
+
+  width: 22%;
+  height: 500px;
+  overflow-y: auto;
+
+  padding: 40px;
+  border-right: 1px solid #ccc;
+}
+
+.sidebar h3 {
+  padding: 20px;
+}
+.sidebar .h3 {
+  background-color: lightskyblue;
+  display: inline-block;
+  padding: 5px;
+}
+
+.sidebar,
+li {
+  line-height: 2.8em;
+  text-align: start;
+  font-size: 16px;
+  margin-left: 10px;
+  color: #6d6868;
+  list-style-type: none;
+}
+
+/*==================///// CENTER SECTION STYLING HERE///// ================*/
+
+main {
+  width: 60%;
+  min-height: 100vh;
+
+  text-align: justify;
+  line-height: 1.5em;
+  padding: 60px 10px;
+  margin-right: 50px;
+  margin-left: 40px;
+}
+
+.main-css h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  padding-bottom: 30px;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.main-css p,
+.main-css li {
+  color: black;
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+
+.main-css a {
+  color: #0057b7;
+  text-decoration: underline;
+}
+.space {
+  padding-top: 40px;
+}
+.main-beg h3,
+.main-ref h3,
+.main-cook h3,
+.main-tools h3,
+.main-bugs h3,
+.main-see h3 {
+  font-weight: 500;
+  font-size: 2.4em;
+  padding: 50px 20px;
+  margin-top: 30px;
+}
+
+.main-beg h3:hover,
+.main-ref h3:hover,
+.main-cook h3:hover,
+.main-tools h3:hover,
+.main-bugs h3:hover,
+.main-see h3:hover {
+  text-decoration: underline;
+}
+
+.main-beg .title {
+  font-size: 1.2em;
+  font-weight: 400;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.main-beg p,
+.main-ref p,
+.main-cook p,
+.toolss ul li p,
+.main-bugs p,
+.main-see p {
+  margin: 20px 15px;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+.main-ref ul li {
+  font-size: 1.1em;
+  color: black;
+  list-style: disc;
+}
+
+.article-links ul {
+  border-left: 1px solid gray;
+  padding: 12px;
+}
+
+.article-links a {
+  text-decoration: none;
+  color: #6d6868;
+}
+
+.toolss li {
+  list-style: disc;
+  font-size: 1.1em;
+  color: black;
+}
+
+/*//////=============RIGHT SIDEBAR STYLING================//////*/
+
+.right-sidebar {
+  width: 18%;
+  height: 300px;
+  margin: 30px 20px;
+  margin-bottom: 200px;
+  padding-top: 10px;
+
+  overflow: auto;
+  position: sticky;
+  top: 145px;
+
+  overflow-y: auto;
+}
+
+.right-sidebar p {
+  font-size: 1.6em;
+}
+
+.right-sidebar li a:hover {
+  color: #54a0ff;
+}
+
+/* =====================BOTTOM DIV HELP STYLING=========================*/
+.cont {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #dce6f2;
+  width: 750px;
+  height: 320px;
+  margin: 50px auto;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+}
+
+.help h3 {
+  font-size: 2.2em;
+  font-weight: 500;
+  padding-top: 20px;
+  padding-left: 15px;
+}
+
+.help p {
+  padding: 18px;
+  font-size: 1.1em;
+}
+
+.help button {
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-left: 20px;
+  border: 0.5px solid gray;
+  cursor: pointer;
+  font-size: medium;
+}
+
+.help .btn1:hover {
+  background-color: rgb(36, 203, 36);
+  color: white;
+}
+
+.help .btn2:hover {
+  background-color: red;
+  color: white;
+}
+
+.help button i {
+  font-size: 1.2em;
+  margin-right: 5px;
+}
+
+.help p a {
+  text-decoration: none;
+}
+
+/*=============FOOTER STYLING===================*/
+
+.footer1 {
+  height: 110px;
+  background-color: #131e2a;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  gap: 60px;
+  padding-left: 350px;
+}
+.footer1 .gitlib {
+  display: flex;
+}
+.footer1 img {
+  width: 150px;
+  height: 60px;
+}
+
+.gitlib p {
+  color: white;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 50px;
+}
+
+.footer1 .gitlib-duo {
+  display: flex;
+  align-items: center;
+}
+.gitlib-duo .btn a {
+  background-color: white;
+  text-decoration: none;
+  padding: 8px;
+  border: 1px solid none;
+  border-radius: 4px;
+  font-size: 15px;
+  color: rgb(40, 40, 71);
+  font-weight: 500;
+}
+
+.gitlib-duo .btn a:hover {
+  text-decoration: underline;
+}
+.gitlib-duo a img {
+  width: 200px;
+  height: 120px;
+  padding-top: 10px;
+}
+
+.footer1 .git-b a {
+  background-color: #aaa;
+  padding: 3.2px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  font-size: 10px;
+  color: white;
+  margin-right: 25px;
+}
+.footer1 .git-b a:hover {
+  text-decoration: none;
+}
+
+.footer2 {
+  background-color: whitesmoke;
+  height: 350px;
+  font-size: 14px;
+  color: #333;
+  padding-top: 50px;
+}
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  font-size: medium;
+}
+
+.footer-logo h2 {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  margin-bottom: 10px;
+}
+
+.social-icons span {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #5c5a5a;
+}
+
+.footer-links {
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+.footer-links h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  margin-left: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding-right: 5px;
+  margin-right: 20px;
+}
+.footer-links li {
+  margin-bottom: 8px;
+  font-size: 0.9em;
+  line-height: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+.footer-bottom {
+  font-size: 13px;
+  padding: 0 50px;
+}
+
+.mozilla {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.mozilla strong {
+  font-size: 20px;
+}
+.mozilla span {
+  font-size: 25px;
+  display: inline-block;
+  transform: rotate(90deg);
+}
+.mozilla a {
+  color: #333;
+  text-decoration: none;
+
+}
+
+.mozilla a:hover {
+  text-decoration: underline;
+}
+.legal a {
+  color: #333;
+  text-decoration: none;
+}
+
+.legal {
+  margin: 20px 0;
+}
+.legal a:hover {
+  text-decoration: underline;
+}
