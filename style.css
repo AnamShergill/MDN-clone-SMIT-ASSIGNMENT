@@ -518,8 +518,8 @@ main {
 
 .right-sidebar {
   width: 18%;
-  height: 300px;
-  margin: 30px 20px;
+  height: 280px;
+  margin: 30px 15px;
   margin-bottom: 200px;
   padding-top: 10px;
 
@@ -532,6 +532,10 @@ main {
 
 .right-sidebar p {
   font-size: 1.6em;
+}
+
+.right-sidebar li {
+  line-height: 38px;
 }
 
 .right-sidebar li a:hover {
