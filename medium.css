@@ -1,0 +1,18 @@
+.main-css h1 {
+     font-size: 1.9rem;
+}
+
+.main-tools h3{
+    font-size: 2em;
+}
+
+.main-beg p,
+.main-ref p,
+.main-cook p,
+.toolss ul li p,
+.main-bugs p,
+.main-see p {
+  margin: 20px 15px;
+  font-size: 1em;
+  line-height: 1.2em;
+}

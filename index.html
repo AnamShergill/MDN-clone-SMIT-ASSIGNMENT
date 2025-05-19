@@ -6,6 +6,14 @@
     <title>MDN-Clone</title>
     
     <link rel="stylesheet" href="./style.css" />
+   <!-- Styles for screen width ≤ 1100px -->
+<link rel="stylesheet" href="large.css" media="(max-width: 1100px)">
+
+<!-- Styles for screen width ≤ 950px -->
+<link rel="stylesheet" href="medium.css" media="(max-width: 960px)">
+
+<!-- Styles for screen width ≤ 700px -->
+<link rel="stylesheet" href="small.css" media="(min-width:550px max-width: 700px)">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
   
@@ -113,7 +121,8 @@
     </div> 
       
     </header>
-    <div id="main">
+    <!---===========Nav2 CODE==============-->
+    <div class="main-nav2">
       <div class="nav2">
        <p><a href="#">References > CSS</a></p>
       <button><i class="fa-solid fa-globe"></i>English (US)</button>
@@ -405,13 +414,9 @@
           </ul>
         </aside>
       </div>
- 
+ </div>
 
-      <div class="f1">
-    
-  </div>
-
-      </div>
+      <!--===================FOOTER CODE START======================-->
 
       <div class="footer1">
          <div class="gitlib">
@@ -428,9 +433,11 @@
     <div class="git-b"><a href="#">AD</a></div>
 
       </div>
+     
 
 
       <!--Footer 2-->
+
      <footer class="footer2">
 
       <div class="footer-top">
@@ -483,7 +490,7 @@
       </div>
     </div>
   <hr />
-
+ <div class="main">
     <div class="footer-bottom">
       <div class="mozilla">
         <strong>Mozilla |<span>.M</span></strong>
@@ -497,8 +504,9 @@
         Portions of this content are ©1998-2025 by individual mozilla.org contributors. Content available under a <a href="#">Creative Commons license</a>.
       </p>
     </div>
-
-     </footer>
-    
   
+  
+      </div></footer>
+  
+     
   </body>   
